@@ -1,83 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root{
-    --main-color:#f73471;
-    --black: #000;
-    --light-color: #866e69;
-}
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    text-transform: capitalize;
-    transition: all .2s linear;
+
+#logo{
+    width: 50px;
+    height: 20px;
+    display: inline-block;
 }
 
-::selection{
-    background: var(--main-color);
-    color: #fff;
+.nav_bar{
+    font-family: Poppins;
+    float: right;
 }
 
-html{
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    scroll-padding-top: 7rem;
+
+
+/*----end of header-------*/
+.main-area{
+    background-image: url(img/01.jpg);
+}
+.info{
+    text-align: center;
+}
+.main-info{
+    padding-top: 100px;
+    font-size: 84px;
 }
 
-html::-webkit-scrollbar{
-    width: 1rem;
+.sign-up{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    width: 90px;
+    height: 30px;
+    font-size: 15px;
 }
-
-html::-webkit-scrollbar-track{
-    background: #fafafa;
-}
-
-html::-webkit-scrollbar-thumb{
-    background: var(--main-color);
-    border-radius: 5rem;
-}
-
-/*-----------header-----------*/
-.header{
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    padding: 3rem 9%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between ;
-    background: rgba(255, 255, 255, .1);
-    box-shadow: 0rem .1rem .5rem rgba(0,0,0,.1);
-    z-index: 1000;
-}
-
-.header .logo{
-    font-size: 2.5rem;
-    color: #fff;
-    font-weight: bold;
-    text-transform: bold;
-    letter-spacing: .1rem;
-}
-
-.header .logo span{
-    background: var(--main-color);
-    text-transform: uppercase;
-}
-
-.header .nav_bar a{
-    font-size: 1.7rem;
-    color: var(--black);
-    margin: 0 1rem;
-}
-
-.header .nav_bar a:hover{
-    color: var(--main-color);
-}
-
-/*-----end of header---------*/

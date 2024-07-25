@@ -8,7 +8,7 @@ html{
   height: 100%;
 }
 body{
-  background-image: linear-gradient(rgba(0, 91, 94, 0.5), rgba(0, 91, 94, 0.5)), url('img/01.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/01.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -55,7 +55,7 @@ nav li:last-child {
 /*-----main starts here*/
 
 .main-info{
-  margin-top: 125px;
+  margin-top: 90px;
   text-align: center;
 }
 
@@ -65,9 +65,51 @@ h1{
 }
 
 .sign-up{
+  cursor: pointer;
   background-color: black;
   color: white;
   font-size: 30px;
   width: 140px;
   border-radius: 10px;
+}
+
+
+.services{
+  background-color: rgba(30, 30, 206, 0.589);
+  margin-bottom: 50px;
+}
+
+.wrapper {
+  min-height: calc(100vh - 200px); /* adjust height to leave space for footer */
+  overflow-y: auto; /* allow content to scroll if it exceeds wrapper height */
+  padding: 20px;
+}
+
+
+
+/*----footer------*/
+/* Send footer to the bottom of the page */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Make icons slightly bigger */
+footer i {
+  font-size: 30px; /* increase font size to 30px */
+  margin: 0 15px; /* add some space between icons */
+}
+
+/* Add some basic styling to the links */
+footer a {
+  color: #000000;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #666;
 }

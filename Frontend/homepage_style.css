@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  font-family: Poppins; 
+}
+
+html{
+  height: 100%;
+}
+body{
+  background-image: linear-gradient(rgba(0, 91, 94, 0.5), rgba(0, 91, 94, 0.5)), url('img/01.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.header{
+  padding-top: 0;
+}
+.logo{
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 80px;
+  display: inline;
+  border-radius: 10px;
+}
+
+nav { /*adjusts nav bar to the top*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+}
+
+nav ul{
+  float: right;
+  display: flex;
+  list-style: none;
+}
+
+nav ul li{
+  padding-left: 40px;
+}
+
+nav li:last-child {
+  margin-right: 60px; /* remove margin from last list item */
+}
+
+/*-----main starts here*/
+
+.main-info{
+  margin-top: 125px;
+  text-align: center;
+}
+
+h1{
+  color: white;
+  font-size: 80px;
+}
+
+.sign-up{
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  width: 140px;
+  border-radius: 10px;
+}

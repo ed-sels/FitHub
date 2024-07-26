@@ -8,10 +8,13 @@ html{
   height: 100%;
 }
 body{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/01.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/sign-in.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -19,8 +22,6 @@ body{
   padding-top: 0;
 }
 .logo{
-  margin-left: 20px;
-  margin-top: 20px;
   width: 80px;
   display: inline;
   border-radius: 10px;
@@ -74,15 +75,16 @@ h1{
 }
 
 
-.services{
-  background-color: rgba(30, 30, 206, 0.589);
-  margin-bottom: 50px;
-}
-
 .wrapper {
   min-height: calc(100vh - 200px); /* adjust height to leave space for footer */
   overflow-y: auto; /* allow content to scroll if it exceeds wrapper height */
   padding: 20px;
+}
+
+#about{
+  margin-top: 80px;
+  background-color: white;
+  height: 550px;
 }
 
 
@@ -91,11 +93,21 @@ h1{
 /* Send footer to the bottom of the page */
 footer {
   position: absolute;
-  bottom: 0;
   left: 0;
   width: 100%;
-  padding: 20px;
   text-align: center;
+  position: sticky;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  height: 40px;
+  background: rgb(255, 255, 255);
+  color: black;
+}
+
+@media (max-width: 768px) {
+  footer {
+      font-size: 14px; /* Adjust font size for smaller screens */
+  }
 }
 
 /* Make icons slightly bigger */
@@ -111,5 +123,5 @@ footer a {
 }
 
 footer a:hover {
-  color: #666;
+  color: #b81919;
 }

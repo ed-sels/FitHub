@@ -63,6 +63,7 @@ body {
             border: none;
             border-radius: 10px;
             cursor: pointer;
+            margin-left: 140px;
         }
         button:hover {
             background-color: #0a9335;
@@ -96,7 +97,7 @@ body {
         }
         .terms {
             font-size: 0.8em;
-            color: #555;
+            color: #ffffff;
             margin-top: 10px;
             text-align: center;
         }

@@ -1,25 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *{
-  font-family: Poppins; 
+  font-family: Poppins;
+  margin: 0;
+  padding: 0; 
 }
 
 html{
   height: 100%;
 }
-body{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/sign-in.jpg');
+.wrapper{
+  background-image: url('img/sign-in.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 120vh;
+  width: 100%;
+  position: relative;
 }
 
-
+.main{
+  background-image: url('img/sign-in.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
 .header{
   padding-top: 0;
+}
+
+.main-logo{
+  padding-left: 20px;
+  padding-top: 20px;
 }
 .logo{
   width: 80px;
@@ -31,6 +46,7 @@ nav { /*adjusts nav bar to the top*/
   position: fixed;
   top: 0;
   left: 0;
+  margin-top: 20px;
   width: 100%;
 }
 
@@ -53,8 +69,6 @@ nav li:last-child {
   margin-right: 60px; /* remove margin from last list item */
 }
 
-/*-----main starts here*/
-
 .main-info{
   margin-top: 90px;
   text-align: center;
@@ -74,54 +88,32 @@ h1{
   border-radius: 10px;
 }
 
-
-.wrapper {
-  min-height: calc(100vh - 200px); /* adjust height to leave space for footer */
-  overflow-y: auto; /* allow content to scroll if it exceeds wrapper height */
-  padding: 20px;
-}
-
 #about{
-  margin-top: 80px;
-  background-color: white;
+  background-color: rgb(5, 2, 49);
   height: 550px;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 30px;
 }
 
+#about .about-section{
+  width: 500px;
+}
 
+#about .service-section{
+  width: 500px;
+}
 
-/*----footer------*/
-/* Send footer to the bottom of the page */
-footer {
-  position: absolute;
-  left: 0;
-  width: 100%;
+.icon{
   text-align: center;
-  position: sticky;
-  padding: 10px 10px 0px 10px;
-  bottom: 0;
+  font-size: 30px;
+}
+
+.icon .bx{
+  color: white;
+  margin: 20px;
+  width: 70px;
   height: 40px;
-  background: rgb(255, 255, 255);
-  color: black;
-}
-
-@media (max-width: 768px) {
-  footer {
-      font-size: 14px; /* Adjust font size for smaller screens */
-  }
-}
-
-/* Make icons slightly bigger */
-footer i {
-  font-size: 30px; /* increase font size to 30px */
-  margin: 0 15px; /* add some space between icons */
-}
-
-/* Add some basic styling to the links */
-footer a {
-  color: #000000;
-  transition: color 0.2s ease;
-}
-
-footer a:hover {
-  color: #b81919;
+  border: 1px solid;
 }

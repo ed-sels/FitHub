@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Settings</title>
+    <link rel="icon" type="image/png" href="img/fithub logo.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="img/orig-logo.jpeg" alt="FitHub logo" class="main-logo">
+        <ul class="side-menu">
+            <li><a href="dashboard.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="#"><i class='bx bx-bar-chart' ></i></i>Schedule</a></li>
+            <li ><a href="profile.html"><i class='bx bx-user'></i>Profile</a></li>
+            <li class="active"><a href="settings.html"><i class='bx bx-cog'></i>Settings</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="sign_in.html" class="logout">
+                    <i class='bx bx-user-minus'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class="bx bx-menu"></i>
+            <h1>Settings</h1>
+
+            <h3>Hello, User</h3>
+            <a href="#" class="profile">
+                <i class="bx bxs-face"></i>
+            </a>
+            <a href="#" class="notif">
+                <i class="bx bx-bell"></i>
+                <span class="count">15</span>
+            </a>
+            
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <div id="profile-container">
+
+            <ul>
+                <li>
+            <label for="name">Name:</label>
+            <input type="text" id="name" value="John Doe">
+            <br>
+            </li>
+
+            <li>
+            <label for="email">Email:</label>
+            <input type="email" id="email" value="johndoe@example.com">
+            <br>
+            </li>
+
+            <li>
+            <label for="bio">Bio:</label>
+            <textarea id="bio">This is a sample bio.</textarea>
+            <br>
+            </li>
+           <a href="profile.html"><button id="save-button">Save Changes</button></a> 
+            </ul>
+        </div>
+    </div>
+
+        <style>
+            #profile-container{
+                font-family: Poppins;
+                background-color: rgb(231, 224, 224);
+                height: 100vh;
+                text-align: center;
+                padding-top: 50px;
+                font-size: 30px;
+            }
+
+            input{
+                border-radius: 5px;
+                height: 40px;
+                width: 200px;
+            }
+
+            #bio{
+                border-radius: 5px;
+                height: 40px;
+                width: 200px;
+            }
+
+            #profile-container ul li{
+                padding: 20px;
+            }
+
+            #save-button{
+                width: 120px;
+                height: 40px;
+                background-color: green;
+                border: 1px white;
+                border-radius: 8px;
+            }
+
+        </style>
+
+    <script>
+        const saveButton = document.getElementById("save-button");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const bioInput = document.getElementById("bio");
+    
+        saveButton.addEventListener("click", () => {
+            const updatedName = nameInput.value;
+            const updatedEmail = emailInput.value;
+            const updatedBio = bioInput.value;
+    
+            // Update the profile information on the page
+            document.getElementById("profile-container").innerHTML = `
+                <h1>My Profile</h1>
+                <p>Name: ${updatedName}</p>
+                <p>Email: ${updatedEmail}</p>
+                <p>Bio: ${updatedBio}</p>
+            `;
+        });
+    </script>
+</body>
+</html>

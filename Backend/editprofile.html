@@ -18,9 +18,8 @@
         <img src="img/orig-logo.jpeg" alt="FitHub logo" class="main-logo">
         <ul class="side-menu">
             <li><a href="dashboard.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
-            <li><a href="#"><i class='bx bx-bar-chart' ></i></i>Schedule</a></li>
+            <li><a href="#"><i class='bx bx-bar-chart'></i></i>Schedule</a></li>
             <li class="active"><a href="profile.html"><i class='bx bx-user'></i>Profile</a></li>
-            <li><a href="settings.html"><i class='bx bx-cog'></i>Settings</a></li>
         </ul>
         <ul class="side-menu">
             <li>
@@ -38,7 +37,7 @@
         <!-- Navbar -->
         <nav>
             <i class="bx bx-menu"></i>
-            <h1>Profile</h1>
+            <h1>Edit Profile</h1>
 
             <h3>Hello, User</h3>
             <a href="#" class="profile">
@@ -48,7 +47,7 @@
                 <i class="bx bx-bell"></i>
                 <span class="count">12</span>
             </a>
-            
+
         </nav>
 
         <!-- End of Navbar -->
@@ -56,7 +55,9 @@
         <main>
 
             <div class="main-pic">
-                <img src="img/profile.jfif" alt="profile picture">
+                <img id="pic" src="img/profile.jfif" alt="profile picture">
+                <div id="picinput"></div>
+                <button id="editbtn">Edit profile picture</button>
             </div>
 
             <div>
@@ -122,20 +123,42 @@
                 </ul>
             </div>
 
-    <style>
-        .main-pic{
-            text-align: center;
-            display: block;
-        }
+            <style>
+                .main-pic {
+                    text-align: center;
+                    display: block;
+                }
 
-        .main-pic img{
-            border-radius: 70px;
-            width: 200px;
-            height: 200px;
-        }
-    </style>
-    
+                .main-pic img {
+                    border-radius: 50%;
+                    width: 200px;
+                    height: 200px;
+                }
+            </style>
+            <script>
+                <script>
+        const saveButton = document.getElementById("save-button");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const bioInput = document.getElementById("bio");
 
-   </body>
+        saveButton.addEventListener("click", (){
+        const updatedName = nameInput.value;
+        const updatedEmail = emailInput.value;
+        const updatedBio = bioInput.value;
+
+        // Update the profile information on the page
+        document.getElementById("profile-container").innerHTML = `
+            <h1>My Profile</h1>
+            <p>Name: ${updatedName}</p>
+            <p>Email: ${updatedEmail}</p>
+            <p>Bio: ${updatedBio}</p>
+        `;
+    });
+</script>
+
+            </script>
+
+</body>
 
 </html>

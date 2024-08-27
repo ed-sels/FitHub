@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <img src="img/orig-logo.jpeg" alt="FitHub logo" class="main-logo">
+        <ul class="side-menu">
+            <li class="active"><a href="#"><i class="bx bxs-dashboard"></i>Dashboard</a></li>
+            <li><a href="schedule.html"><i class="bx bx-bar-chart"></i>Schedule</a></li>
+            <li><a href="profile.html"><i class="bx bx-user"></i>Profile</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="sign_in.html" class="logout">
+                    <i class="bx bx-user-minus"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class="bx bx-menu"></i>
+            <h1>Dashboard</h1>
+
+            <h3>Hello, User</h3>
+            <a href="#" class="profile">
+                <i class="bx bxs-face"></i>
+            </a>
+            <a href="#" class="notif">
+                <i class="bx bx-bell"></i>
+                <span class="count">12</span>
+            </a>
+            
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <i class="bx bx-chevrons-up"></i>
+                    <span class="info">
+                        <h3>
+                            80%
+                        </h3>
+                        <p>Fit Score</p>
+                    </span>
+                </li>
+                <li><i class="bx bx-water"></i>
+                    <span class="info">
+                        <h3>
+                            5L/8L
+                        </h3>
+                        <p>Water Intake</p>
+                    </span>
+                </li>
+                <li><i class="bx bxs-coffee-bean"></i>
+                    <span class="info">
+                        <h3>
+                            0
+                        </h3>
+                        <p>Calories</p>
+                    </span>
+                </li>
+                <li><i class="bx bx-run"></i>
+                    <span class="info">
+                        <h3>
+                            1,552
+                        </h3>
+                        <p>Steps</p>
+                    </span>
+                </li>
+            </ul>
+
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <h3>Progress</h3>
+                    </div>
+                    
+                    <canvas id="myChart">
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <script>
+                            const data = {
+                                labels: ['Week 1', 'Week 2', 'Week 3'],
+                                datasets: [{
+                                    label: 'Progress',
+                                    data: [20, 40, 60],
+                                    borderColor: 'blue',
+                                    fill: false
+                                }]
+                            };
+                    
+                            const ctx = document.getElementById('myChart').getContext('2d');
+                            const myChart = new Chart(ctx, {
+                                type: 'line',
+                                data: data,
+                                options:   
+                     {
+                                    scales: {
+                                        y: {
+                                            beginAtZero:   
+                     true,
+                                            max: 100 // Adjust the maximum value based on your data
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
+                        </canvas>
+
+                </div>
+
+                <div class="reminders">
+                    <div class="header">
+                        <h3>Meals</h3>
+                    </div>
+                    <ul class="task-list">
+                        
+                    </ul>
+                </div>
+                
+            </div>
+
+            <!-- End of Insights -->
+
+
+        </main>
+
+    </div>
+
+    
+    
+    
+</body>
+</html>

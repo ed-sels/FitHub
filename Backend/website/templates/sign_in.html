@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
     <link rel="icon" type="image/png" href="img/fithub logo.jpg">
-    <link rel="stylesheet" href="sign_in_style.css">
+    <link rel="stylesheet" href="../static/sign_in_style.css">
 </head>
 <body>
 
     <section>
 
     <div class="login-box">
-        <form action="">
-            <img src="img/fithub logo.jpg" alt="FitHub Logo" class="logo1">
+        <form action="/sign_in" method="POST">
+            <img src="../static/img/fithub logo.jpg" alt="FitHub Logo" class="logo1">
             <h2>Login</h2>
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                <input type="username" id="username" required>
+                <input type="name" id="name" required>
                 <label>Username</label>
             </div>
             <div class="input-box">
@@ -29,30 +30,14 @@
                 <label><input type="checkbox">Remember me</label>
                 <a href="#">Forgot Password</a>
             </div>
-            <a href="dashboard.html"><button onclick="signIn()">Login</button></a>
+            <a href="{{url_for('dashboard')}}"><button>Login</button></a>
             
             <div class="sign-up">
-                <p>Don't have an account? <br><a href="sign-up.html" style="color: green;">Register</a></p>
+                <p>Don't have an account? <br><a href="{{url_for('sign_up')}}" style="color: green;">Register</a></p>
             </div> 
         </form>
     </div>
     </section>
-    <script>
-        function signIn() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-
-  // Validate username and password here (e.g., using server-side validation)
-
-  if (isValidCredentials(username, password)) {
-    // Redirect to dashboard
-    window.location.href = "dashboard.html";
-  } else {
-    // Display an error message
-    alert("Invalid username or password.");
-  }
-}
-    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

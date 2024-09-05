@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitHub Homepage</title>
     <link rel="icon" type="image/png" href="img/fithub logo.jpg">
-    <link rel="stylesheet" href="homepage_style.css">
+    <link rel="stylesheet" href="../static/homepage_style.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
   <section class="main">
     <div class="header">
     <div class="main-logo">
-        <img src="img/black-logo.jpeg" alt="Fithub logo" class="logo">
+        <img src="../static/img/black-logo.jpeg" alt="Fithub logo" class="logo">
     </div>
     <nav class="nav-bar">
         <ul>
@@ -27,7 +27,7 @@
 
     <div class="main-info">
         <h1>Take Your Fitness <br> To The Next Level</h1>
-        <a href="sign-up.html"><button class="sign-up">JOIN US</button></a>
+        <a href="{{url_for("sign_up")}}"><button class="sign-up">JOIN US</button></a>
 
     </div>
     

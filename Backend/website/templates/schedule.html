@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../static/dashboard.css">
     <title>Schedule</title>
     <link rel="icon" type="image/png" href="img/fithub logo.jpg">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -15,15 +15,15 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <img src="img/orig-logo.jpeg" alt="FitHub logo" class="main-logo">
+        <img src="../static/img/orig-logo.jpeg" alt="FitHub logo" class="main-logo">
         <ul class="side-menu">
-            <li><a href="dashboard.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="{{url_for('dashboard')}}"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
             <li class="active"><a href="#"><i class='bx bx-bar-chart' ></i></i>Schedule</a></li>
-            <li><a href="profile.html"><i class='bx bx-user'></i>Profile</a></li>
+            <li><a href="{{url_for('profile')}}"><i class='bx bx-user'></i>Profile</a></li>
         </ul>
         <ul class="side-menu">
             <li>
-                <a href="sign_in.html" class="logout">
+                <a href="{{url_for('sign_in')}}" class="logout">
                     <i class="bx bx-user-minus"></i>
                     Logout
                 </a>
@@ -145,21 +145,21 @@
                     <ul class="task-list">
                         <li>
                             <div class="task-title">
-                                <img src="img/oat.jpg" alt="oat pic" class="oat">
+                                <img src="../static/img/oat.jpg" alt="oat pic" class="oat">
                                 <p>Oats with bread</p>
                             </div>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                         <li >
                             <div class="task-title">
-                                <img src="img/rice.jpg" alt="rice pic" class="rice">
+                                <img src="../static/img/rice.jpg" alt="rice pic" class="rice">
                                 <p>Rice and gravy</p>
                             </div>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                         <li >
                             <div class="task-title">
-                                <img src="img/yam.jpg" alt="oat pic" class="yam">
+                                <img src="../static/img/yam.jpg" alt="oat pic" class="yam">
                                 <p>Yam with sauce</p>
                             </div>
                             <i class='bx bx-dots-vertical-rounded'></i>

@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../static/dashboard.css">
 </head>
 <body>
 
     <div class="sidebar">
-        <img src="img/orig-logo.jpeg" alt="FitHub logo" class="main-logo">
+        <img src="../static/img/orig-logo.jpeg" alt="FitHub logo" class="main-logo">
         <ul class="side-menu">
             <li class="active"><a href="#"><i class="bx bxs-dashboard"></i>Dashboard</a></li>
-            <li><a href="schedule.html"><i class="bx bx-bar-chart"></i>Schedule</a></li>
-            <li><a href="profile.html"><i class="bx bx-user"></i>Profile</a></li>
+            <li><a href="{{url_for('schedule')}}"><i class="bx bx-bar-chart"></i>Schedule</a></li>
+            <li><a href="{{url_for('profile')}}"><i class="bx bx-user"></i>Profile</a></li>
         </ul>
         <ul class="side-menu">
             <li>
-                <a href="sign_in.html" class="logout">
+                <a href="{{url_for('sign_in')}}" class="logout">
                     <i class="bx bx-user-minus"></i>
                     Logout
                 </a>
@@ -126,10 +126,28 @@
 
                 <div class="reminders">
                     <div class="header">
-                        <h3>Meals</h3>
+                        <h3>Progress</h3>
                     </div>
                     <ul class="task-list">
-                        
+                        <canvas id="mychart"></canvas>
+                        <script>
+                            var ct = document.getElementById('mychart').getContext('2d');
+                            var mychart = new Chart(ct, {
+                                type: 'doughnut',
+                                data: {
+                                    labels: ['Completed', 'Remaining'],
+                                    datasets:   
+                           [{
+                                        data: [75, 25],
+                                        backgroundColor: ['#4CAF50', '#f0f0f0'],
+                                        borderWidth: 0
+                                    }]
+                                },
+                                options: {
+                                    cutoutPercentage: 80
+                                }
+                            });
+                          </script>
                     </ul>
                 </div>
                 

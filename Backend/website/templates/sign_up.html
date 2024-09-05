@@ -43,12 +43,12 @@
         </div>
         
         <div class="login-link">
-            Already have an account? <a href="sign_in.html">Login</a>
+            Already have an account? <a href="{{url_for('sign_in')}}">Login</a>
         </div>
         <div id="message"></div>
     </div>
 
-    <script>
+    <!-- <script>
         const form = document.getElementById('signup-form');
 
 
@@ -113,6 +113,6 @@ form.addEventListener('submit', (e) => {
             this.classList.toggle('fa-eye-slash');
         });
 
-    </script>
+    </script> -->
 </body>
 </html>

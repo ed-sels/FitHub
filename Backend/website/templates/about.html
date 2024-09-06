@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Fitness Site</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='black-logo.jpeg') }}">
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/schedule">Schedule</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <section>
+                <h2>Our Mission</h2>
+                <p>At FitHub, our mission is to empower individuals to achieve their health and fitness goals through accessible, high-quality resources and support. We believe in a holistic approach to wellness that includes physical fitness, mental well-being, and proper nutrition.</p>
+                <h2>About Us</h2>
+                    <p>Welcome to our fitness tracker app! We're dedicated to helping you stay healthy, active, and motivated on your wellness journey. <br> <h4>What We Offer</h4></p>
+        <ul>
+        <li><b>Track Your Progress:</b> Our app allows you to monitor your workouts, steps, heart rate, and nutrition, providing a comprehensive view of your fitness activities.</li>
+        <li><b>Wearable Integration:</b> Seamlessly connect with wearable devices to automatically gather fitness data, making it easier for you to stay on top of your health goals.</li>
+        </ul>
+        <div class="service-section">
+            <h3>Why Choose Us</h3>
+            <ul>
+              <li><b>Engaging Experience:</b> Stay motivated with challenges, personalized workout suggestions, and a supportive community of health-conscious individuals.</li>
+              <li><b>Data Protection:</b> Your privacy and security are our top priorities. We're committed to safeguarding your personal information and ensuring a safe user experience.</li>
+            </ul>
+            <h3>Join Us Today</h3>
+            <p>Take the first step towards a healthier lifestyle. Download our app and become part of our vibrant fitness community.</p>
+          </div>
+                <h2>Our Team</h2>
+                <div class="team">
+                    <div class="team-member">
+                        <img src="team_member1.jpg" alt="Team Member 1">
+                        <h3>Jane Doe</h3>
+                        <p>Certified Fitness Trainer with 10 years of experience in helping clients achieve their fitness goals.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="team_member2.jpg" alt="Team Member 2">
+                        <h3>John Smith</h3>
+                        <p>Nutritionist and wellness coach dedicated to providing personalized diet plans and nutritional advice.</p>
+                    </div>
+                    <!-- Add more team members as needed -->
+                </div>
+                
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need support, feel free to <a href="mailto:support@fitnesssite.com">email us</a>.</p><br><br>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 FitHub. All rights reserved.</p>
+    </footer>
+</body>
+</html>

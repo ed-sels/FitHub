@@ -7,7 +7,7 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/dashboard.css">
     <title>Profile</title>
-    <link rel="icon" type="image/png" href="img/fithub logo.jpg">
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='black-logo.jpeg') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -18,7 +18,8 @@
         <img src="../static/img/orig-logo.jpeg" alt="FitHub logo" class="main-logo">
         <ul class="side-menu">
             <li><a href="{{url_for('dashboard')}}"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
-            <li><a href="#"><i class='bx bx-bar-chart'></i></i>Schedule</a></li>
+            <li><a href="{{url_for('schedule')}}"><i class="bx bx-bar-chart"></i>Schedule</a></li>
+            <li><a href="{{url_for('blog')}}"><i class='bx bxl-blogger'></i></i>Blog</a></li>
             <li class="active"><a href="{{url_for('profile')}}"><i class='bx bx-user'></i>Profile</a></li>
         </ul>
         <ul class="side-menu">

@@ -10,17 +10,16 @@ html{
   height: 100%;
 }
 .wrapper{
-  background-image: url('img/sign-in.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url('img/sign-in.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 120vh;
   width: 100%;
   position: relative;
 }
 
 .main{
-  background-image: url('img/sign-in.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url('img/sign-in.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -90,19 +89,7 @@ h1{
 
 #about{
   background-color: rgb(5, 2, 49);
-  height: 550px;
   color: white;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 30px;
-}
-
-#about .about-section{
-  width: 500px;
-}
-
-#about .service-section{
-  width: 500px;
 }
 
 .icon{

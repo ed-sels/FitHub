@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='blog.css') }}">
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='black-logo.jpeg') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='img/orig-logo.jpeg') }}" alt="Fithub logo"
+        style="width: 80px; border-radius: 5px;">
+        <nav>
+            <ul>
+                <li><a href="{{url_for('dashboard')}}">Dashboard</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="{{url_for('profile')}}">Profile</a></li>
+                <li><a href="{{url_for('schedule')}}">Schedule</a></li>
+                <li><a href="{{url_for('sign_in')}}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <aside>
+                <h2>Popular Fitness Videos</h2>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=xyz" target="_blank">Beginner Workout</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=abc" target="_blank">Advanced Strength Training</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=123" target="_blank">Yoga for Flexibility</a></li>
+                </ul>
+            </aside>
+
+            <section>
+                <h2>Latest Blog Posts</h2>
+                <article>
+                    <h3>5 Tips for a Successful Fitness Journey</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus orci et dolor semper, ac elementum risus sagittis.</p>
+                    <a href="#">Read More</a>
+                </article>
+
+                <article>
+                    <h3>The Importance of a Balanced Diet</h3>
+                    <p>Nullam efficitur dui at quam bibendum, sit amet pretium urna posuere. Suspendisse potenti.</p>
+                    <a href="#">Read More</a>
+                </article>
+
+                <!-- Add more blog posts here -->
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 FitHub Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -80,6 +80,18 @@ def sign_in():
     return render_template('sign_in.html')
 
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/blog')
+def blog():
+    if 'user_id' not in session:
+        flash('Please log in to view the blog page.', 'danger')
+        return redirect('/sign_in')
+    
+    return render_template('blog.html')
+
 
 @app.route('/logout')
 def logout():

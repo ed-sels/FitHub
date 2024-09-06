@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/dashboard.css">
+    <title>Edit Profile</title>
+    <link rel="icon" type="image/png" href="../static/img/img/fithub logo.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="../static/img/orig-logo.jpeg" alt="FitHub logo" class="main-logo">
+        <ul class="side-menu">
+            <li><a href="dashboard.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="#"><i class='bx bx-bar-chart'></i></i>Schedule</a></li>
+            <li class="active"><a href="profile.html"><i class='bx bx-user'></i>Profile</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="sign_in.html" class="logout">
+                    <i class='bx bx-user-minus'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class="bx bx-menu"></i>
+            <h1>Edit Profile</h1>
+
+            <h3>Hello, User</h3>
+            <a href="#" class="profile">
+                <i class="bx bxs-face"></i>
+            </a>
+            <a href="#" class="notif">
+                <i class="bx bx-bell"></i>
+                <span class="count">12</span>
+            </a>
+
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <form method="POST" action="/edit_profile">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" name="name" class="form-control" value="{{ user['name'] }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" value="{{ user['email'] }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="dobb" class="form-label">Date of Birth</label>
+                    <input type="date" id="dobb" name="dobb" class="form-control" value="{{ user['dobb'] }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="bio" class="form-label">Bio</label>
+                    <input type="text" id="bio" name="bio" class="form-control" value="{{ user['bio'] }}" required>
+                </div>
+                <button type="submit" class="btn-primary">Update Profile</button>
+            </form>
+        
+            <a href="{{url_for('profile')}}" class="btn btn-secondary mt-3">Back to Profile</a>
+        </main>
+            
+        <style>
+            .mb-3{
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                font-size: 20px;
+                padding-left: 30px;
+            }
+
+            input{
+                width: 250px;
+                height: 50px;
+                margin-left: 20px;
+                border-radius: 10px;
+            }
+
+            .btn-primary{
+                background-color: white;
+                width: 120px;
+                height: 40px;
+                border: 1px solid white;
+                border-radius: 8px;
+                font-size: 15px;
+                font-weight: 700;
+
+            }
+        </style> 
+                 
+
+        
+           
+
+</body>
+
+</html>

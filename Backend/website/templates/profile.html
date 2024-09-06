@@ -64,18 +64,12 @@
                 <ul class="insights">
                     <li>
                         <span class="info">
-                            <h3>
-                                Name
-                            </h3>
-                            <p>Osei Carlos</p>
+                                <p><strong>Name:</strong> {{ user['name'] }}</p>
                         </span>
                     </li>
                     <li>
                         <span class="info">
-                            <h3>
-                                Date of Birth
-                            </h3>
-                            <p>12/12/2021</p>
+                            <p><strong>Date Of Birth:</strong> {{ user['dobb'] }}</p>
                         </span>
                     </li>
                 </ul>
@@ -85,18 +79,12 @@
                 <ul class="insights">
                     <li>
                         <span class="info">
-                            <h3>
-                                Bio
-                            </h3>
-                            <p>Osei Carlos</p>
+                            <p><strong>Bio:</strong> {{ user['bio'] }}</p>
                         </span>
                     </li>
                     <li>
                         <span class="info">
-                            <h3>
-                                Email
-                            </h3>
-                            <p>ocarlos10@gmail.com</p>
+                            <p><strong>Email:</strong> {{ user['email'] }}</p>
                         </span>
                     </li>
                 </ul>
@@ -123,7 +111,7 @@
                 </ul>
             </div>
 
-            <div class="edit"><a href="settings.html"><button><b> Edit Profile</b></button></a></div>
+            <div class="edit"><a href="{{ url_for('edit_profile') }}"><button><b> Edit Profile</b></button></a></div>
 
             <style>
                 .main-pic {

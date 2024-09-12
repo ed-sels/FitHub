@@ -79,7 +79,6 @@ def sign_in():
 
     return render_template('sign_in.html')
 
-
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -188,7 +187,12 @@ def edit_profile():
             session['email'] = email
             session['dobb'] = dobb
             session['bio'] = bio
-
+# MOTTEY EDWIN SELORM	UEB3504222
+# TUTU LOUISA OFOSUHEMAA	UEB3507922
+# BAIDOO ANIMAH	UEB3513622
+# APPIAGYEI YAA KONADU	UEB3508822
+# AMOAH ENOCH EDUMADZE	UEB3509222
+# AMEYAW SIAW JEFF CHRIS	UEB3511422
             flash('Profile updated successfully!', 'success')
             return redirect('/profile')
 

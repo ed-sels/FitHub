@@ -223,7 +223,64 @@ def edit_profile():
             flash('Error fetching user data: ' + str(e), 'danger')
             return redirect('/sign_in')
 
+# Assume 'mysql' is the MySQL connection already set up in the Flask app.
 
+@app.route('/exercises', methods=['GET'])
+def exercises():
+    if 'user_id' not in session:
+        flash('Please log in to access the exercise tracker.', 'danger')
+        return redirect('/sign_in')
+    
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT id, name, sets, reps, progress FROM exercises WHERE user_id = %s", (session['user_id'],))
+    exercises = cur.fetchall()
+    cur.close()
+
+    return render_template('exercise.html', exercises=exercises)
+
+
+@app.route('/add_exercise', methods=['POST'])
+def add_exercise():
+    if 'user_id' not in session:
+        flash('Please log in to add exercises.', 'danger')
+        return redirect('/sign_in')
+
+    name = request.form.get('exercise_name')
+    sets = request.form.get('sets')
+    reps = request.form.get('reps')
+    progress = request.form.get('progress')
+
+    if not name or not sets or not reps or not progress:
+        flash('All fields are required!', 'danger')
+        return redirect('/exercises')
+
+    cur = mysql.connection.cursor()
+    cur.execute("""
+        INSERT INTO exercises (user_id, name, sets, reps, progress)
+        VALUES (%s, %s, %s, %s, %s)
+        """, (session['user_id'], name, sets, reps, progress))
+    mysql.connection.commit()
+    cur.close()
+
+    flash('Exercise added successfully!', 'success')
+    return redirect('/exercises')
+
+
+@app.route('/delete_exercise', methods=['POST'])
+def delete_exercise():
+    if 'user_id' not in session:
+        flash('Please log in to delete exercises.', 'danger')
+        return redirect('/sign_in')
+
+    exercise_id = request.form.get('exercise_id')
+
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM exercises WHERE id = %s AND user_id = %s", (id, session['user_id']))
+    mysql.connection.commit()
+    cur.close()
+
+    flash('Exercise deleted successfully!', 'success')
+    return redirect('/exercises')
 
 
 if __name__ == '__main__':

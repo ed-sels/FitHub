@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='exercise.css') }}">
+</head>
+<body>
+
+    <h1>Exercise Tracker</h1>
+
+    <!-- Form to Add Exercise -->
+    <form action="/add_exercise" method="POST">
+        <label for="exercise_name">Exercise Name:</label>
+        <input type="text" id="exercise_name" name="exercise_name" required>
+        
+        <label for="sets">Sets:</label>
+        <input type="number" id="sets" name="sets" required>
+
+        <label for="reps">Reps:</label>
+        <input type="number" id="reps" name="reps" required>
+
+        <label for="progress">Progress (%) :</label>
+        <input type="number" id="progress" name="progress" required>
+        
+        <button type="submit">Add Exercise</button>
+    </form>
+
+    <h2>Your Exercises</h2>
+
+    <!-- Display Exercises -->
+    <table>
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Progress</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exercise in exercises %}
+            <tr>
+                <td>{{ exercises['name'] }}</td>
+                <td>{{ exercises['sets'] }}</td>
+                <td>{{ exercises['reps'] }}</td>
+                <td>{{ exercises['progress'] }}%</td>
+                <td>
+                    <form action="/delete_exercise" method="POST">
+                        <input type="hidden" name="exercise_id" value="{{ exercise.id }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/blog">Back to Blog</a>
+
+</body>
+</html>

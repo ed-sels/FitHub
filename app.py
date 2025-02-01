@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, session, flash, url_for
-from flask_mysqldb import MySQL
+from flask_mysqldb import MySQL # type: ignore
 from werkzeug.security import generate_password_hash, check_password_hash 
 import os
 
